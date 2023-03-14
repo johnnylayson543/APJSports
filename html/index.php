@@ -19,7 +19,6 @@
               <li><a href="about.php">Rugby</a></li>
               <li><a href="contacts.php">Boxing</a></li>
               <li><a href="contacts.php">Swimming</a></li>
-
           </ul>
         </nav>
         <h3 class="text-muted">Home page</h3>

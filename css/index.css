@@ -3,13 +3,14 @@ body {
     padding-bottom: 20px;
 }
 li {
-
-    display: inline;
-    margin-left: 0;
-    margin-right: 0;
-    width: 40%;
     color: white;
     font-size: 21px;
+}
 
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
