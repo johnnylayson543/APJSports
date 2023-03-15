@@ -11,5 +11,5 @@
     }
 
     else {
-        echo "Successfully connected \n";
+        echo "Successfully connected <br><br>\n";
     }
