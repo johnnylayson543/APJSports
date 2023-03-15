@@ -2,7 +2,8 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "password";
+
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=apjdatabase", $username, $password);
