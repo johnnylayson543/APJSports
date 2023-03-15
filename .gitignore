@@ -1,2 +1,2 @@
-connectionsqli.php
-connection.php
+connectiondatabase/connectionsqli.php
+connectionmysqli/connection.php

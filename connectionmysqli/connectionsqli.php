@@ -2,7 +2,7 @@
     // PHP connect to DB credentials
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $password = "2we";
     $dbname = "apjdatabase";
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);
