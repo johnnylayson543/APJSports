@@ -5,9 +5,30 @@
 
 
 <body>
+
 <div class="container">
     <form action="" method="post" name="Login_Form" class="form-signup">
-        <h2 class="form-signup-heading">Please sign up</h2>
+        <h2 class="form-signup-heading">Please sign in</h2>
+
+        <label for="inputEmail" >Email</label>
+        <input name="Email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus><br>
+
+        <label for="inputPassword">Password</label>
+        <input name="Password" type="password" id="inputPassword" class="form-control" placeholder="Password" required autofocus><br>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button name="Submit" value="Signup" class="button" type="submit">Sign In</button>
+
+    </form>
+</div>
+
+<div class="container">
+    <form action="" method="post" name="Login_Form" class="form-signup">
+        <h2 class="form-signup-heading">Or create an account</h2>
 
         <label for="inputUFirstname" >First Name</label>
         <input name="Firstname" type="firstname" id="inputUFirstname" class="form-control" placeholder="Firstname" required autofocus><br>
@@ -25,12 +46,6 @@
 
         <label for="inputEmail" >Email</label>
         <input name="Email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus><br>
-
-
-
-
-
-
 
         <div class="checkbox">
             <label>
