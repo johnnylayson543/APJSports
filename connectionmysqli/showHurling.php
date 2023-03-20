@@ -12,8 +12,9 @@ if (mysqli_num_rows($qryResult) > 0)
     // Fetch and echo the sql query results
     while ($row = mysqli_fetch_assoc($qryResult)) {
 
-        echo "Item id = " . $row["itemID"] . " Price = " . $row["price"] . " image = " . $row["image"] . " Stock = " . $row["stock"] . " Sport = " . $row["Sport"] . "<br><br>";
-    }
+        echo "<img src='../images/hurling/" . $row["image"] . "' width='250' height='250'>" .
+            "Item id = " . $row["itemID"] . " Price = " . $row["price"] . " Stock = " . $row["stock"] .
+            " Sport = " . $row["Sport"] . "<br><br>";    }
 }
 else
 {
