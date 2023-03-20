@@ -1,4 +1,4 @@
-
+<?php require_once '../template/header.php';?>
 <link rel="stylesheet" type="text/css" href="../css/signup.css">
 <title>Sign in</title>
 </head>
@@ -10,21 +10,21 @@
         <h2 class="form-signup-heading">Please sign up</h2>
 
         <label for="inputUFirstname" >First Name</label>
-        <input name="Firstname" type="firstname" id="inputUFirstname" class="form-control" placeholder="Firstname" required autofocus>
+        <input name="Firstname" type="firstname" id="inputUFirstname" class="form-control" placeholder="Firstname" required autofocus><br>
 
         <label for="inputSurname" >Surname</label>
-        <input name="Surname" type="surname" id="inputSurname" class="form-control" placeholder="Surname" required autofocus>
+        <input name="Surname" type="surname" id="inputSurname" class="form-control" placeholder="Surname" required autofocus><br>
 
 
         <label for="inputAddress" >Address</label>
-        <input name="Address" type="address" id="inputAddress" class="form-control" placeholder="Address" required autofocus>
+        <input name="Address" type="address" id="inputAddress" class="form-control" placeholder="Address" required autofocus><br>
 
 
         <label for="inputPassword">Password</label>
-        <input name="Password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input name="Password" type="password" id="inputPassword" class="form-control" placeholder="Password" required autofocus><br>
 
         <label for="inputEmail" >Email</label>
-        <input name="Email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+        <input name="Email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus><br>
 
 
 
