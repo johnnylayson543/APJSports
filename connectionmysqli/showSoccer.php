@@ -14,7 +14,7 @@ if (mysqli_num_rows($qryResult) > 0)
 
         echo "<img src='../images/soccer/" . $row["image"] . "' width='250' height='250'>" .
             "Item id = " . $row["itemID"] . " Price = " . $row["price"] . " Stock = " . $row["stock"] .
-            " Sport = " . $row["Sport"] . "<br><br>";
+            " Sport = " . $row["Sport"] . "<br>";
     }
 }
 else
