@@ -24,6 +24,7 @@
         <button name="Submit" value="Signup" class="button" type="submit">Sign In</button>
 
     </form>
+
 </div>
 
 <div class="container">
@@ -40,12 +41,11 @@
         <label for="inputAddress" >Address</label>
         <input name="Address" type="address" id="inputAddress" class="form-control" placeholder="Address" required autofocus><br>
 
+        <label for="inputEmail" >Email</label>
+        <input name="Email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus><br>
 
         <label for="inputPassword">Password</label>
         <input name="Password" type="password" id="inputPassword" class="form-control" placeholder="Password" required autofocus><br>
-
-        <label for="inputEmail" >Email</label>
-        <input name="Email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus><br>
 
         <div class="checkbox">
             <label>
@@ -53,7 +53,7 @@
             </label>
         </div>
         <button name="Submit" value="Signup" class="button" type="submit">Sign up</button>
-
+        <?php require_once '../connectionmysqli/signupFunc.php'; ?>
     </form>
 </div>
 </body>
