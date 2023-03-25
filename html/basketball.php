@@ -7,6 +7,6 @@
 
 <h3>Basketball</h3>
 
-<?php require_once '../connectionmysqli/showBasketball.php'?>
 
+<?php require_once '../connectiondatabase/showBasketballPDO.php' ?>
 </body>

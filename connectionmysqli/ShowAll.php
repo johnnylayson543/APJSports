@@ -1,6 +1,7 @@
 <?php
 include "connectionsqli.php";
 
+ob_end_clean();
 
 $sql = "select * from item";  // $sql var to do select query
 $qryResult = mysqli_query($conn, $sql);  // $qry the result with the connection
@@ -19,6 +20,5 @@ else
 {
     echo '0 results found';  // Print 0 found
 }
-
 
 mysqli_close($conn);   // Close the sql connection when done

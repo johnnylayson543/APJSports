@@ -7,6 +7,8 @@
 
 <h3>Orders</h3>
 
+<input type="button" value="clear" onclick="">
+
 <?php require_once '../connectionmysqli/showOrders.php'?>
 
 </body>
