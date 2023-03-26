@@ -1,8 +1,6 @@
 <?php
 include "connection.php";
 
-
-
 $sql = "SELECT * FROM item WHERE Sport = 'Soccer'";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
@@ -13,5 +11,10 @@ if ($stmt->rowCount() > 0) {
             "Item id = " . $row["itemID"] . " Price = " . $row["price"] . " Stock = " . $row["stock"] .
             " Sport = " . $row["Sport"] . "<br><br>";
     }
-
 }
+else
+{
+    echo '0 results found';  // Print 0 found
+}
+
+$pdo = null;

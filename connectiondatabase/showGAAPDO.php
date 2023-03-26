@@ -15,3 +15,9 @@ if ($stmt->rowCount() > 0) {
     }
 
 }
+else
+{
+    echo '0 results found';  // Print 0 found
+}
+
+$pdo = null;
