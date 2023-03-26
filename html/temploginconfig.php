@@ -3,6 +3,6 @@
 // It should be replaced by login credentials acquired in the database
 
 
-/* Define username and password */
-$Username = "Steve";
-$Password = "pass";
+// Temporary Username and Password
+$Username = "Adam";
+$Password = "pleaseputpasswordonyoursql";

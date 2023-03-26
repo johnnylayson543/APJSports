@@ -1,7 +1,7 @@
 <?php require_once '../template/header.php';?>
-<?php require_once ('config.php'); ?>
+<?php require_once('temploginconfig.php'); ?>
 <link rel="stylesheet" type="text/css" href="../css/signup.css">
-    <title>Sign in</title>
+    <title>Login to Your APJSports Account</title>
 </head>
 
 
@@ -23,29 +23,28 @@
     </form>
 
     <?php
-    // Consider moving this php part on a separate PHP file as a function
-    /* Check if login form has been submitted */
-    /* isset — Determine if a variable is declared and is different than NULL*/
+
+    // Check and use this whether or if the user submits his username and password
     if(isset($_POST['Submit']))
     {
 
-        /* Check if the form's username and password matches */
-        /* these currently check against variable values stored in config.php but later we will see how these can be checked against information in a database*/
+        // If the Username and Password matches
         if( ($_POST['Username'] == $Username) && ($_POST['Password'] == $Password) )
         {
 
-            /* Success: Set session variables and redirect to protected page */
-            $_SESSION['Username'] = $Username; //store Username to the session
-            $_SESSION['Active'] = true; //remember we can call a session what we like e.g. $_SESSION["newsession"]=$value;
-            header("location:index.php"); /* 'header() is used to redirect the browser */
-            exit; //we’ve just used header() to redirect to another page but we must terminate all current code so that it doesn’t run when we redirect
+            // Trigger Success: Apply the Username to the current session and set the session to active (true)
+            $_SESSION['Username'] = $Username; // Store Username to the new session
+            $_SESSION['Active'] = true; // Set new session to Active
+            header("location:index.php"); // Redirect to index page
+            exit; // Terminate current code so it doesn't run again on redirect
 
         }
         else
-            echo 'Incorrect Username or Password';
+            echo 'Incorrect Username or Password';  // If the Username and Password is incorrect
     }
     ?>
 
 </div>
-</body>
-</html>
+
+<?php require_once '../template/footer.php';?>
+

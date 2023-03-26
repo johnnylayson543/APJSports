@@ -56,5 +56,5 @@
         <?php require_once '../connectionmysqli/signupFunc.php'; ?>
     </form>
 </div>
-</body>
-</html>
+
+<?php require_once '../template/footer.php';?>

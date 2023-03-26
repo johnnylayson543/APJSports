@@ -9,4 +9,6 @@
 
 
 <?php require_once '../connectiondatabase/showBasketballPDO.php' ?>
-</body>
+
+
+<?php require_once '../template/footer.php';?>

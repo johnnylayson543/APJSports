@@ -9,4 +9,4 @@
 
 <?php require_once '../connectionmysqli/showGAA.php'?>
 
-</body>
+<?php require_once '../template/footer.php';?>

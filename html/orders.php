@@ -11,4 +11,4 @@
 
 <?php require_once '../connectionmysqli/showOrders.php'?>
 
-</body>
+<?php require_once '../template/footer.php';?>

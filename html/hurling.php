@@ -9,4 +9,4 @@
 
 <?php require_once '../connectionmysqli/showHurling.php'?>
 
-</body>
+<?php require_once '../template/footer.php';?>
