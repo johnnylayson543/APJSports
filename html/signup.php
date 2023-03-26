@@ -27,6 +27,8 @@
 
 </div>
 
+<?php require_once '../connectionmysqli/signinFunc.php'; ?>
+
 <div class="container">
     <form action="" method="post" name="Login_Form" class="form-signup">
         <h2 class="form-signup-heading">Or create an new APJSports Account</h2>

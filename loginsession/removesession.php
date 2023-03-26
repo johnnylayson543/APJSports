@@ -20,7 +20,7 @@
     function forgetSession()
     {
         $this->killSession();
-        header("location:login.php");  /* Redirect to login page */
+        header("location:signup.php");  // Redirect to signup page
         exit;
 
     }
