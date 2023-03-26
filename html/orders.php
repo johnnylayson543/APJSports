@@ -1,4 +1,5 @@
 <?php require_once '../template/header.php';?>
+<?php require_once '../loginsession/forceloginheader.php';?>
 <title>Orders</title>
 </head>
 

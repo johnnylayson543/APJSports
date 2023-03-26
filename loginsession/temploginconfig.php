@@ -4,5 +4,5 @@
 
 
 // Temporary Username and Password
-$Username = "Adam";
-$Password = "pleaseputpasswordonyoursql";
+$Email = "adammaher@tudublin.ie";
+$Password = "password";
