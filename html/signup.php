@@ -55,7 +55,7 @@
             </label>
         </div>
         <button name="Submit" value="Signup" class="button" type="submit">Sign up</button>
-        <?php require_once '../connectionmysqli/signupFunc.php'; ?>
+        <?php require_once '../connectiondatabase/signupFuncPDO.php'; ?>
     </form>
 </div>
 
