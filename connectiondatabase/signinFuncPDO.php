@@ -1,11 +1,12 @@
-<?php require_once('../loginsession/temploginconfig.php'); ?>
+
 <?php
 // Check and use this whether or if the user submits his username and password
 if(isset($_POST['Submit']))
 {
+    require_once('../loginsession/temploginconfig.php');
 
     // If the Username and Password matches
-    if( ($_POST['Email'] == $Email) && ($_POST['Password'] == $Password) )
+    if( ($checkEmail == $Email) && ($checkPassword == $Password) )
     {
 
         // Trigger Success: Apply the Username to the current session and set the session to active (true)
