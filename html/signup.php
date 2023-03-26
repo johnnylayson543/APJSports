@@ -1,6 +1,6 @@
 <?php require_once '../template/header.php';?>
 <link rel="stylesheet" type="text/css" href="../css/signup.css">
-<title>Sign in</title>
+<title>Sign in to your APJSports Account</title>
 </head>
 
 
@@ -29,7 +29,7 @@
 
 <div class="container">
     <form action="" method="post" name="Login_Form" class="form-signup">
-        <h2 class="form-signup-heading">Or create an account</h2>
+        <h2 class="form-signup-heading">Or create an new APJSports Account</h2>
 
         <label for="inputUFirstname" >First Name</label>
         <input name="Firstname" type="firstname" id="inputUFirstname" class="form-control" placeholder="Firstname" required autofocus><br>

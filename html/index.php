@@ -1,5 +1,5 @@
 <?php require_once '../template/header.php';?>
-<title>Home page</title>
+<title>APJSports - Home Page</title>
 </head>
 
 
