@@ -7,4 +7,4 @@ if($_SESSION['Active'] == false){
     header("location:signup.php");
     exit;
 }
-?>
+
