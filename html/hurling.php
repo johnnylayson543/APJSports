@@ -8,6 +8,6 @@
 
 <h3>Hurling</h3>
 
-<?php require_once '../connectionmysqli/showHurling.php'?>
+<?php require_once '../connectiondatabase/showHurlingPDO.php'?>
 
 <?php require_once '../template/footer.php';?>

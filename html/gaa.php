@@ -8,6 +8,6 @@
 
 <h3>GAA</h3>
 
-<?php require_once '../connectionmysqli/showGAA.php'?>
+<?php require_once '../connectiondatabase/showGAAPDO.php'?>
 
 <?php require_once '../template/footer.php';?>

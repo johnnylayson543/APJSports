@@ -8,6 +8,6 @@
 
 <h3>Rugby</h3>
 
-<?php require_once '../connectionmysqli/showRugby.php'?>
+<?php require_once '../connectiondatabase/showRugbyPDO.php'?>
 
 <?php require_once '../template/footer.php';?>
