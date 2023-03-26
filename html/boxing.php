@@ -7,6 +7,6 @@
 
 <h3>Boxing</h3>
 
-<?php require_once '../connectionmysqli/showBoxing.php'?>
+<?php require_once '../connectiondatabase/showBoxingPDO.php'?>
 
 <?php require_once '../template/footer.php';?>
