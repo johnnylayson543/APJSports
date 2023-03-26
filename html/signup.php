@@ -27,7 +27,7 @@
 
 </div>
 
-<?php require_once '../connectionmysqli/signinFunc.php'; ?>
+<?php require_once '../connectionmysqli/signinFuncPDO.php'; ?>
 
 <div class="container">
     <form action="" method="post" name="Login_Form" class="form-signup">
