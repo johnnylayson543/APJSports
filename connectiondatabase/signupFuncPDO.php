@@ -2,7 +2,7 @@
 include "connection.php";
 
 //once user presses submit on the sign up for the following will happen
-if(isset($_POST['Submit'])){
+if(isset($_POST['Submit1'])){
 
     //assigning values to variables based on user's input in the form
     $firstName = $_POST['Firstname'];

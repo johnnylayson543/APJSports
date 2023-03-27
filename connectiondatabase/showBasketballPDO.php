@@ -20,4 +20,4 @@ else
     echo '0 results found';  // Print 0 found
 }
 
-$pdo = null; 
+$pdo = null;

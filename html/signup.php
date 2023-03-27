@@ -54,7 +54,7 @@
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-        <button name="Submit" value="Signup" class="button" type="submit">Sign up</button>
+        <button name="Submit1" value="Signup" class="button" type="submit">Sign up</button>
         <?php require_once '../connectiondatabase/signupFuncPDO.php'; ?>
     </form>
 </div>

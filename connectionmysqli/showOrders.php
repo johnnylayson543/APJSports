@@ -12,7 +12,9 @@ if (mysqli_num_rows($qryResult) > 0)
     // Fetch and echo the sql query results
     while ($row = mysqli_fetch_assoc($qryResult)) {
 
-        echo "Order id = " . $row["orderID"] . " Customer Name = " . $row["customerName"] . " Customer ID = " . $row["Customer_customerID"] . " Transaction ID = " . $row["Transactions_transactionID"] . " Order Status = " . $row["orderStatus"] . "<br><br>";
+        echo "Order id = " . $row["orderID"] . " Customer Name = " . $row["customerName"] . " Customer ID = " .
+            $row["Customer_customerID"] . " Transaction ID = " . $row["Transactions_transactionID"] .
+            " Order Status = " . $row["orderStatus"] . "<br><br>";
     }
 }
 else
