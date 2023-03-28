@@ -2,8 +2,9 @@
 <?php require_once '../loginsession/forceloginheader.php';?>
 <title>APJSports - Home Page</title>
 </head>
-
-
+<header>
+<h1>APJSports</h1>
+</header>
 
 
         <div class="mainarea">
