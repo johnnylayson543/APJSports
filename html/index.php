@@ -7,6 +7,7 @@
 
 
         <div class="mainarea">
+            <?php include "../connectiondatabase/staffView.php" ?>
             <h1>TITLE </h1>
             <p class="lead">This is where we will put the images of popular items</p>
 
