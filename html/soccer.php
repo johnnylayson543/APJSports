@@ -8,6 +8,9 @@
 
 <h3>Soccer</h3>
 
-<?php $item->__showItems("Soccer"); ?>
+<?php
+$item->__showItems("Soccer");
+$item->__incStock("7", "3");
+?>
 
 <?php require_once '../template/footer.php';?>
