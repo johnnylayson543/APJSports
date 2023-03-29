@@ -1,3 +1,6 @@
+
+<?php require_once '../connectiondatabase/Item.php';?>
+
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html>
@@ -33,3 +36,6 @@
         </nav>
     </div>
 </div>
+<?php
+$item = new Item();
+?>

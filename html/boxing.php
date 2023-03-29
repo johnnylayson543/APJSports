@@ -8,6 +8,6 @@
 
 <h3>Boxing</h3>
 
-<?php require_once '../connectiondatabase/showBoxingPDO.php'?>
+<?php $item->__showItems("Boxing"); ?>
 
 <?php require_once '../template/footer.php';?>

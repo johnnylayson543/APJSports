@@ -8,6 +8,6 @@
 
 <h3>Soccer</h3>
 
-<?php require_once '../connectiondatabase/showSoccerPDO.php'?>
+<?php $item->__showItems("Soccer"); ?>
 
 <?php require_once '../template/footer.php';?>

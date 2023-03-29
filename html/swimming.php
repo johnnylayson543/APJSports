@@ -8,6 +8,6 @@
 
 <h3>Swimming</h3>
 
-<?php require_once '../connectiondatabase/showSwimmingPDO.php'?>
+<?php $item->__showItems("Swimming");?>
 
 <?php require_once '../template/footer.php';?>
