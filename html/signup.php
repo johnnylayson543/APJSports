@@ -22,12 +22,11 @@
             </label>
         </div>
         <button name="Submit" value="Signup" class="button" type="submit">Sign In</button>
-
+        <?php require_once '../connectiondatabase/signinFuncPDO.php'; ?>
     </form>
 
 </div>
 
-<?php require_once '../connectiondatabase/signinFuncPDO.php'; ?>
 
 <div class="container">
     <form action="" method="post" name="Login_Form" class="form-signup">
