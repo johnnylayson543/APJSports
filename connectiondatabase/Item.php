@@ -8,6 +8,85 @@ class Item
     private int $stock;
     private String $sport;
 
+    /**
+     * @return int
+     */
+    public function getItemID(): int
+    {
+        return $this->itemID;
+    }
+
+    /**
+     * @param int $itemID
+     */
+    public function setItemID(int $itemID): void
+    {
+        $this->itemID = $itemID;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrice(): float
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param float $price
+     */
+    public function setPrice(float $price): void
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return String
+     */
+    public function getImage(): string
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param String $image
+     */
+    public function setImage(string $image): void
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStock(): int
+    {
+        return $this->stock;
+    }
+
+    /**
+     * @param int $stock
+     */
+    public function setStock(int $stock): void
+    {
+        $this->stock = $stock;
+    }
+
+    /**
+     * @return String
+     */
+    public function getSport(): string
+    {
+        return $this->sport;
+    }
+
+    /**
+     * @param String $sport
+     */
+    public function setSport(string $sport): void
+    {
+        $this->sport = $sport;
+    }
 
     public function __showItems(String $sport): void
     {
@@ -73,7 +152,9 @@ class Item
 
     }
 
+    public function __addToOrder(): void{
 
 
+    }
 
 }
