@@ -124,6 +124,9 @@ class User
         $this->address = $address;
     }
 
+    public function __signup(): void {
+
+    }
     public function __login(): void {
 
     }

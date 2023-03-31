@@ -91,7 +91,7 @@ class Item
     public function __showItems(String $sport): void
     {
 
-        include "connection.php";
+        include "../connectiondatabase/connection.php";
 
         $sql = "SELECT * FROM item WHERE Sport = '" . $sport . "'";
         $stmt = $conn->prepare($sql);
@@ -116,7 +116,7 @@ class Item
 
     public function __incStock(int $itemID, int $num): void {
 
-        include "connection.php";
+        include "../connectiondatabase/connection.php";
 
         $sql = "SELECT * FROM item WHERE itemID = '" . $itemID . "'";
         $stmt = $conn->prepare($sql);
@@ -135,7 +135,7 @@ class Item
 
     public function __decStock(int $itemID, int $num): void {
 
-        include "connection.php";
+        include "../connectiondatabase/connection.php";
 
         $sql = "SELECT * FROM item WHERE itemID = '" . $itemID . "'";
         $stmt = $conn->prepare($sql);
