@@ -39,14 +39,16 @@ class Item
 
         include "connection.php";
 
-        $sql = "SELECT * FROM item WHERE Sport = '" . $itemID . "'";
+        $sql = "SELECT * FROM item WHERE itemID = '" . $itemID . "'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $itemStock = $row["stock"] ;
 
-        $sql = "UPDATE item SET stock = '" . $itemStock + $num . "' WHERE itemID = '" . $itemID . "'";
+        $newStock = $itemStock + $num;
+
+        $sql = "UPDATE item SET stock = " . $newStock . " WHERE itemID = '" . $itemID . "'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
@@ -54,7 +56,20 @@ class Item
 
     public function __decStock(int $itemID, int $num): void {
 
+        include "connection.php";
 
+        $sql = "SELECT * FROM item WHERE itemID = '" . $itemID . "'";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $itemStock = $row["stock"] ;
+
+        $newStock = $itemStock - $num;
+
+        $sql = "UPDATE item SET stock = " . $newStock . " WHERE itemID = '" . $itemID . "'";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
 
     }
 
