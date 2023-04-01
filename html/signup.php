@@ -21,7 +21,7 @@
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-        <button name="Submit" value="Signup" class="button" type="submit">Sign In</button>
+        <button name="SignIn" value="Signup" class="button" type="submit">Sign In</button>
         <?php require_once '../connectiondatabase/signinFuncPDO.php'; ?>
     </form>
 

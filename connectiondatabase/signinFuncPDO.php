@@ -1,22 +1,34 @@
-
 <?php
-// Check and use this whether or if the user submits his username and password
-if(isset($_POST['Submit']))
+require '../connectiondatabase/connection.php';
+// If the SignIn button is pressed
+if(isset($_POST['SignIn']))
 {
-    require_once('../loginsession/temploginconfig.php');
+    // Validate if the Email and Password POST is empty
+    if($_POST["Email"] == "" or $_POST["Password"] == ""){
+        echo "<h1>Empty Email and Password!</h1>";
+    }
+    else {
 
-    // If the Username and Password matches
-    if( ($checkEmail == $Email) && ($checkPassword == $Password) )
-    {
+        // Assign the POST form requests to the variables (this also needs to be sanitized)
+        $Email = $_POST["Email"];
+        $Password = $_POST["Password"];
+        $sql = "SELECT * FROM user WHERE email = :email AND password = :password";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':email', $Email);
+        $stmt->bindValue(':password', $Password);
+        $stmt->execute();
 
-        // Trigger Success: Apply the Username to the current session and set the session to active (true)
-        $_SESSION['Username'] = $Email; // Store Email to the new session
-        $_SESSION['Active'] = true; // Set new session to Active
-        header("location:index.php"); // Redirect to index page
-        exit; // Terminate current code so it doesn't run again on redirect
+        // Check if email and password is found and the table rowCount is not 0
+        if($stmt->rowCount() > 0){
+            $_SESSION['Email'] = $Email; // Store Email to the new session
+            $_SESSION['Active'] = true; // Set new session to Active
+            header("location:index.php"); // Redirect to index page
+        }
+        else {
+            echo 'Incorrect Email or Password';  // If the Username and Password is incorrect
+        }
 
     }
-    else
-        echo 'Incorrect Email or Password';  // If the Username and Password is incorrect
+
 }
 

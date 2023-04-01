@@ -1,7 +1,7 @@
 <?php
 include "connection.php";
 
-//once user presses submit on the sign up for the following will happen
+// Once user presses submit on the sign up for the following will happen
 if(isset($_POST['Submit1'])){
 
     //assigning values to variables based on user's input in the form
@@ -11,7 +11,7 @@ if(isset($_POST['Submit1'])){
     $email = $_POST['Email'];
     $password = $_POST['Password'];
 
-    //validating that all the fields are filled in
+    // Validating that all the fields are filled in
     if (!empty($firstName) && !empty($surName) && !empty($address) && !empty($email) && !empty($password)) {
 
         $sql = "SELECT * FROM user WHERE email = :email";
@@ -19,7 +19,7 @@ if(isset($_POST['Submit1'])){
         $stmt->bindParam(':email', $email);
         $stmt->execute();
 
-        //validating that email address isn't already assigned to ad different user
+        // Validating that email address isn't already assigned to ad different user
         if ($stmt->rowCount() > 0) {//if a result shows up that means email is already taken
             echo "Email already in use.";
         } else {
@@ -37,15 +37,15 @@ if(isset($_POST['Submit1'])){
             $stmt->bindParam(':surName', $surName);
             $stmt->bindParam(':address', $address);
 
-            //adding all the user details to the database
+            // Adding all the user details to the database
             if ($stmt->execute()) {
                 echo "Account created";
             } else {
-                echo "Error";
+                echo "Error!";
             }
         }
     } else {
-        //if some fields are left empty message will say "Please fill in all the fields provided"
+        // If some fields are left empty message will say "Please fill in all the fields provided"
         echo "Please fill in all the fields provided";
     }
 }
