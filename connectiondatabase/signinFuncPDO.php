@@ -14,9 +14,18 @@ if(isset($_POST['SignIn']))
         $Password = $_POST["Password"];
         $sql = "SELECT * FROM user WHERE email = :email AND password = :password";
         $stmt = $conn->prepare($sql);
+
+        // Bind the sql attributes and values on the user table with the PHP variables as "placeholder" to prevent SQL Injection
         $stmt->bindValue(':email', $Email);
         $stmt->bindValue(':password', $Password);
-        $stmt->execute();
+        // Execute the sql statement with specific associative array values & attributes on the user table.
+        // If not, it executes and assigns all the default associative array values & attributes on the user table alongside with the
+        // default $_POST["Email"] and $_POST["Password"] requests and values
+        // You can do $stmt->execute(array('email' => $_POST["Email"], 'password' => $_POST["Password"])) as well
+        $stmt->execute(array(
+            'email' => $Email,
+            'password' => $Password
+        ));
 
         // Check if email and password is found and the table rowCount is not 0
         if($stmt->rowCount() > 0){
