@@ -1,13 +1,33 @@
 <?php require_once '../template/header.php';?>
 <?php require_once '../loginsession/forceloginheader.php';?>
-<title>Rugby</title>
-</head>
+    <link rel="stylesheet" type="text/css" href="../css/itemlayout.css">
+    <title>Rugby</title>
+    </head>
+
+    <body>
+
 
 
 <body>
+<header><h1>Rugby</h1></header>
 
-<h3>Rugby</h3>
 
-<?php $item->__showItems("Rugby"); ?>
+<div class="item-container">
+    <?php
+    $items = $item->__showItems("Rugby");
+    if ($items) { // check if $items is not null
+        foreach($items as $item) {
+            ?>
+            <div class="item">
+                <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['name']; ?>">
+                <h4><?php echo $item['name']; ?></h4>
+                <p><?php echo $item['price']; ?></p>
+            </div>
+            <?php
+        }
+    } else {
 
+    }
+    ?>
+</div>
 <?php require_once '../template/footer.php';?>
