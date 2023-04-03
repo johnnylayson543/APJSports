@@ -8,31 +8,25 @@
 <body>
 <header><h1>Soccer</h1></header>
 
+
 <div class="item-container">
     <?php
     $items = $item->__showItems("Soccer");
-    var_dump($items);
+
     if ($items) { // check if $items is not null
-        foreach($item as $item) {
+        foreach($items as $item) {
             ?>
             <div class="item">
                 <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['name']; ?>">
                 <h4><?php echo $item['name']; ?></h4>
-                <form method="POST" action="cart.php">
-                    <input type="hidden" name="item_id" value="<?php echo $item['id']; ?>">
-                    <button type="submit">Add to cart</button>
-                </form>
+                <p><?php echo $item['price']; ?></p>
             </div>
             <?php
         }
     } else {
-        echo "No items found.";
-
 
     }
     ?>
 </div>
-
-
 <?php require_once '../template/footer.php';?>
 
