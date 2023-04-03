@@ -10,6 +10,7 @@
 
 
 <div class="item-container">
+
     <?php
     $items = $item->__showItems("Soccer");
 
@@ -20,6 +21,7 @@
                 <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['name']; ?>">
                 <h4><?php echo $item['name']; ?></h4>
                 <p><?php echo $item['price']; ?></p>
+
             </div>
             <?php
         }

@@ -12,6 +12,8 @@
 <div class="item-container">
     <?php
     $items = $item->__showItems("GAA");
+    var_dump($items);
+
     if ($items) { // check if $items is not null
         foreach($items as $item) {
             ?>
