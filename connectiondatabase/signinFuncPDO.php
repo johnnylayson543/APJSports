@@ -1,17 +1,25 @@
 <?php
+use loginsession\sanitizer;
+
+require_once '../loginsession/sanitizer.php';
 require '../connectiondatabase/connection.php';
 // If the SignIn button is pressed
 if(isset($_POST['SignIn']))
 {
+    // Create a new sanitizer variable using the sanitizer class
+    $sanitizer = new sanitizer();
+
     // Validate if the Email and Password POST is empty
     if($_POST["Email"] == "" or $_POST["Password"] == ""){
         echo "<h1>Empty Email and Password!</h1>";
     }
     else {
 
-        // Assign the POST form requests to the variables (this also needs to be sanitized)
-        $Email = $_POST["Email"];
-        $Password = $_POST["Password"];
+        // Assign the POST form requests to the variables (also needs to be sanitized)
+        $Email = $sanitizer->sanitize($_POST["Email"]);
+        $Password = $sanitizer->sanitize($_POST["Password"]);
+
+        // Create and prepare sql statement
         $sql = "SELECT * FROM user WHERE email = :email AND password = :password";
         $stmt = $conn->prepare($sql);
 

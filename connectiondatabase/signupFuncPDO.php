@@ -1,15 +1,20 @@
 <?php
-include "connection.php";
+use loginsession\sanitizer;
 
+require_once '../loginsession/sanitizer.php';
+require "connection.php";
 // Once user presses submit on the sign up for the following will happen
 if(isset($_POST['Submit1'])){
 
-    //assigning values to variables based on user's input in the form
-    $firstName = $_POST['Firstname'];
-    $surName = $_POST['Surname'];
-    $address = $_POST['Address'];
-    $email = $_POST['Email'];
-    $password = $_POST['Password'];
+    // Create a new sanitizer variable using the sanitizer class
+    $sanitizer = new sanitizer();
+
+    // Assigning values to variables based on user's input in the form (also needs to be sanitized)
+    $firstName = $sanitizer->sanitize($_POST['Firstname']);
+    $surName = $sanitizer->sanitize($_POST['Surname']);
+    $address = $sanitizer->sanitize($_POST['Address']);
+    $email = $sanitizer->sanitize($_POST['Email']);
+    $password = $sanitizer->sanitize($_POST['Password']);
 
     // Validating that all the fields are filled in
     if (!empty($firstName) && !empty($surName) && !empty($address) && !empty($email) && !empty($password)) {
