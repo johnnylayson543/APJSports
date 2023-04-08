@@ -1,8 +1,7 @@
 <?php
-// This php login header code checks if the user is logged in. Otherwise, it redirects the user to login.
+// This php code checks if the user has signed-in and created a session.
+// If not, it redirects you to the sign-in/sign-up page and forces the user to sign-in or create an account
 
-// If not logged in (no active session), redirect the user to login page
-// Use this as a header on every php page that requires a login to access
 if($_SESSION['Active'] == false){
     header("location:signup.php");
     exit;
