@@ -1,11 +1,14 @@
 <?php
-
+ use Item;
 class Order
 {
     private int $orderID;
     private double $price;
     private String $customerName;
     private OrderStaus $orderStatus;
+
+
+
 
     /**
      * @param int $orderID
@@ -93,7 +96,8 @@ class Order
 
     }
 
-    public function __calcTotal(): void{
+    public function __calcTotal(): void {
+
 
     }
 

@@ -104,7 +104,7 @@ class Item
                 echo "<img src='../images/" . $sport . "/" . $row["image"] . "' width='250' height='250'>" .
                     "Item id = " . $row["itemID"] . " Price = " . $row["price"] . " Stock = " . $row["stock"] .
                     " Sport = " . $row["Sport"] . "
-                    <br><br>";
+                    <button>Add to Cart</button> <br><br>";
             }
 
         }
