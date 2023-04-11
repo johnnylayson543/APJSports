@@ -173,11 +173,11 @@ class Item
             // Create new items and sanitize data
             $sanitize = new sanitizer();
             $create_item = array(
-                "itemID" => $sanitize->sanitizer($_POST['ItemID']),
-                "price" => $sanitize->sanitizer($_POST['Price']),
-                "image" => $sanitize->sanitizer($_POST['Image']),
-                "stock" => $sanitize->sanitizer($_POST['Stock']),
-                "Sport" => $sanitize->sanitizer($_POST['Sport']),
+                "itemID" => $sanitize->sanitize($_POST['ItemID']),
+                "price" => $sanitize->sanitize($_POST['Price']),
+                "image" => $sanitize->sanitize($_POST['Image']),
+                "stock" => $sanitize->sanitize($_POST['Stock']),
+                "Sport" => $sanitize->sanitize($_POST['Sport']),
             );
             $sql = sprintf("INSERT INTO %s (%s) values (%s)", "item",
                 implode(", ", array_keys($create_item)),
