@@ -1,5 +1,7 @@
 <?php
 
+use loginsession\sanitizer;
+
 class Item
 {
     private int $itemID;
@@ -154,6 +156,46 @@ class Item
 
     public function __addToOrder(): void{
 
+
+    }
+
+    public function __createItem(): void{
+
+        // It's probably best to create a separate page which does the POST request for these stuff
+        // Then do the POST requests on the variable on the different page
+        // and then pass the variables as parameters for createItem then sanitize
+
+        require_once "../loginsession/sanitizer.php";
+        try {
+            // Connect to the DB
+            include '../connectiondatabase/connection.php';
+
+            // Create new items and sanitize data
+            $sanitize = new sanitizer();
+            $create_item = array(
+                "itemID" => $sanitize->sanitizer($_POST['ItemID']),
+                "price" => $sanitize->sanitizer($_POST['Price']),
+                "image" => $sanitize->sanitizer($_POST['Image']),
+                "stock" => $sanitize->sanitizer($_POST['Stock']),
+                "Sport" => $sanitize->sanitizer($_POST['Sport']),
+            );
+            $sql = sprintf("INSERT INTO %s (%s) values (%s)", "item",
+                implode(", ", array_keys($create_item)),
+                ":" . implode(", :", array_keys($create_item)));
+            $stmt = $conn->prepare($sql);
+            $stmt->execute($create_item);
+
+        } catch(PDOException $error) {
+            echo $sql . "<br>" . $error->getMessage();
+        }
+
+        // Check if the submitted form is successful
+        if (isset($_POST['Create']) && $stmt)
+        {
+            echo '<br><br>';
+            echo $create_item['itemID'] . ' has been successfully created!';
+            echo '<br><br>';
+        }
 
     }
 
