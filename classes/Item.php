@@ -120,21 +120,20 @@ class Item
 
         if ($stmt->rowCount() > 0) {
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                $objectID = $row["itemID"];
+                $objectPrice = $row["price"];
+                $objectImage = $row["image"];
+                $objectStock = $row["stock"];
+                $objectSport = $row["Sport"];
+
+                $objectName = "item" . $objectID;
+                $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
+                $$objectName = $object;
+
                 echo "<img src='../images/" . $sport . "/" . $row["image"] . "' width='250' height='250'>" .
                     "Item id = " . $row["itemID"] . " Price = " . $row["price"] . " Stock = " . $row["stock"] .
-                    " Sport = " . $row["Sport"] . "
-                    <button>Add to Cart</button> <br><br>";
-
-                    $objectID = $row["itemID"];
-                    $objectPrice = $row["price"];
-                    $objectImage = $row["image"];
-                    $objectStock = $row["stock"];
-                    $objectSport = $row["Sport"];
-
-                    $objectName = "item" . $objectID;
-                    $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
-                    $$objectName = $object;
-
+                    " Sport = " . $row["Sport"] . "<button onclick=''>Add to Cart</button> <br><br>";
             }
 
         }
