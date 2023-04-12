@@ -37,5 +37,5 @@
     </div>
 </div>
 <?php
-$item = new Item();
+$item = new Item(0,0,"", 0, "");
 ?>

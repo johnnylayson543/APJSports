@@ -11,24 +11,9 @@
 
 <div class="item-container">
 
-    <?php
-    $items = $item->__showItems("Soccer");
+    <?php $item->__showItems("Soccer");
 
-    if ($items) { // check if $items is not null
-        foreach($items as $item) {
-
-            ?>
-            <div class="item">
-                <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['name']; ?>">
-                <h4><?php echo $item['name']; ?></h4>
-                <p><?php echo $item['price']; ?></p>
-
-            </div>
-            <?php
-        }
-    } else {
-        var_dump($items);
-    }
+    var_dump($item7);
     ?>
 </div>
 <?php require_once '../template/footer.php';?>

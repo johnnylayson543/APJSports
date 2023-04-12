@@ -13,6 +13,23 @@ class Item
     private String $sport;
 
     /**
+     * @param int $itemID
+     * @param float $price
+     * @param String $image
+     * @param int $stock
+     * @param String $sport
+     */
+    public function __construct(int $itemID, float $price, string $image, int $stock, string $sport)
+    {
+        $this->itemID = $itemID;
+        $this->price = $price;
+        $this->image = $image;
+        $this->stock = $stock;
+        $this->sport = $sport;
+    }
+
+
+    /**
      * @return int
      */
     public function getItemID(): int
@@ -107,6 +124,17 @@ class Item
                     "Item id = " . $row["itemID"] . " Price = " . $row["price"] . " Stock = " . $row["stock"] .
                     " Sport = " . $row["Sport"] . "
                     <button>Add to Cart</button> <br><br>";
+
+                    $objectID = $row["itemID"];
+                    $objectPrice = $row["price"];
+                    $objectImage = $row["image"];
+                    $objectStock = $row["stock"];
+                    $objectSport = $row["Sport"];
+
+                    $string = "item" . $objectID;
+
+                    $string = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
+
             }
 
         }
