@@ -1,5 +1,27 @@
 <?php require_once '../template/header.php';?>
 <?php require_once '../loginsession/forceloginheader.php';?>
+<?php
+use Item;
+use loginsession\sanitizer;
+require_once '../loginsession/sanitizer.php';
+// If the Create button is pressed
+if(isset($_POST['Create']))
+{
+    $sanitizer = new sanitizer();
+
+    $price = $sanitizer->sanitize($_POST['Price']);
+    $image = $sanitizer->sanitize($_POST['Image']);
+    $stock = $sanitizer->sanitize($_POST['Stock']);
+    $Sport = $sanitizer->sanitize($_POST['Sport']);
+
+    $create_item = new Item();
+
+    // $create_item->
+}
+
+
+
+?>
 <link rel="stylesheet" type="text/css" href="../css/signup.css">
 <title>Create Items for APJSports (Employees Only)</title>
 </head>
