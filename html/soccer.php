@@ -13,7 +13,7 @@
 
     <?php $item->__showItems("Soccer");
 
-    var_dump($item7);
+
     ?>
 </div>
 <?php require_once '../template/footer.php';?>

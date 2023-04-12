@@ -131,9 +131,9 @@ class Item
                     $objectStock = $row["stock"];
                     $objectSport = $row["Sport"];
 
-                    $string = "item" . $objectID;
-
-                    $string = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
+                    $objectName = "item" . $objectID;
+                    $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
+                    $$objectName = $object;
 
             }
 
@@ -144,6 +144,8 @@ class Item
         }
 
         $pdo = null;
+
+        //$item3->__showItem($item3->getItemID());
 
     }
 
@@ -229,5 +231,13 @@ class Item
         }
 
     }
+
+    public function __showItem(int $id):void {
+
+        $string = "item " . strval($id) . " exists";
+
+        echo $string;
+    }
+
 
 }
