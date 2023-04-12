@@ -8,9 +8,9 @@ class Item
 {
     private int $itemID;
     private float $price;
-    private String $image;
+    private string $image;
     private int $stock;
-    private String $sport;
+    private string $sport;
 
     /**
      * @param int $itemID
@@ -109,7 +109,7 @@ class Item
         $this->sport = $sport;
     }
 
-    public function __showItems(String $sport): void
+    public function __showItems(string $sport): void
     {
 
         include "../connectiondatabase/connection.php";
@@ -136,9 +136,7 @@ class Item
                     " Sport = " . $row["Sport"] . "<button onclick=''>Add to Cart</button> <br><br>";
             }
 
-        }
-        else
-        {
+        } else {
             echo '0 results found';  // Print 0 found
         }
 
@@ -148,7 +146,8 @@ class Item
 
     }
 
-    public function __incStock(int $itemID, int $num): void {
+    public function __incStock(int $itemID, int $num): void
+    {
 
         include "../connectiondatabase/connection.php";
 
@@ -157,7 +156,7 @@ class Item
         $stmt->execute();
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $itemStock = $row["stock"] ;
+        $itemStock = $row["stock"];
 
         $newStock = $itemStock + $num;
 
@@ -167,7 +166,8 @@ class Item
 
     }
 
-    public function __decStock(int $itemID, int $num): void {
+    public function __decStock(int $itemID, int $num): void
+    {
 
         include "../connectiondatabase/connection.php";
 
@@ -176,7 +176,7 @@ class Item
         $stmt->execute();
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $itemStock = $row["stock"] ;
+        $itemStock = $row["stock"];
 
         $newStock = $itemStock - $num;
 
@@ -186,12 +186,14 @@ class Item
 
     }
 
-    public function __addToCart(): void{
+    public function __addToCart(): void
+    {
 
 
     }
 
-    public function __createItem(): void{
+    public function __createItem(): void
+    {
 
         // It's probably best to create a separate page which does the POST request for these stuff
         // Then do the POST requests on the variable on the different page
@@ -217,13 +219,12 @@ class Item
             $stmt = $conn->prepare($sql);
             $stmt->execute($create_item);
 
-        } catch(PDOException $error) {
+        } catch (PDOException $error) {
             echo $sql . "<br>" . $error->getMessage();
         }
 
         // Check if the submitted form is successful
-        if (isset($_POST['Create']) && $stmt)
-        {
+        if (isset($_POST['Create']) && $stmt) {
             echo '<br><br>';
             echo $create_item['itemID'] . ' has been successfully created!';
             echo '<br><br>';
@@ -231,12 +232,12 @@ class Item
 
     }
 
-    public function __showItem(int $id):void {
+    public function __showItem(int $id): void
+    {
 
         $string = "item " . strval($id) . " exists";
 
         echo $string;
     }
-
-
+    
 }

@@ -1,9 +1,9 @@
 <?php
- use Item;
+
 class Order
 {
     private int $orderID;
-    private double $price;
+    private float $price;
     private String $customerName;
     private OrderStaus $orderStatus;
 
@@ -90,8 +90,11 @@ class Order
         $this->orderStatus = $orderStatus;
     }
 
-    public function __showCart(): void {
+    public function __showCart($cart): void {
 
+        foreach ($cart as $item){
+            $item->__showItem($item->getItemID());
+        }
     }
     public function __removeItem(): void {
 
