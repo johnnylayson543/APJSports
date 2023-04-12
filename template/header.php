@@ -1,5 +1,6 @@
 
 <?php require_once '../classes/Item.php';?>
+<?php require_once '../classes/Order.php';?>
 
 <?php session_start(); ?>
 <!DOCTYPE html>
@@ -38,5 +39,5 @@
 </div>
 <?php
 $item = new Item(0,0,"", 0, "");
-// $order = new Order();
+//$order = new Order();
 ?>
