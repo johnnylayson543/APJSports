@@ -16,6 +16,7 @@
 
     if ($items) { // check if $items is not null
         foreach($items as $item) {
+
             ?>
             <div class="item">
                 <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['name']; ?>">
@@ -26,7 +27,7 @@
             <?php
         }
     } else {
-
+        var_dump($items);
     }
     ?>
 </div>

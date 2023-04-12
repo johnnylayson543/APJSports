@@ -1,0 +1,18 @@
+
+button {
+    display: inline-block;
+    padding: 5px; /* Change padding */
+    background-color: #007bff; /* Change  background color */
+    color: #fff; /* Change to  text color */
+    font-size: 16px; /* Change  font size */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a  transition effect */
+    width: 100px; /* Change  width */
+    height: 30px; /* Change  height */
+}
+
+
+button:hover {
+    background-color: #0056b3; /* Change  hover background color */
+}

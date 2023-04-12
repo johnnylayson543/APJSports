@@ -1,6 +1,8 @@
+<link rel="stylesheet" type="text/css" href="../css/itembutton.css">
 <?php
 
 use loginsession\sanitizer;
+
 
 class Item
 {
@@ -114,6 +116,7 @@ class Item
         }
 
         $pdo = null;
+
     }
 
     public function __incStock(int $itemID, int $num): void {
