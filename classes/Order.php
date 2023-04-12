@@ -7,6 +7,8 @@ class Order
     private String $customerName;
     private OrderStaus $orderStatus;
 
+    private array $cart;
+
 
 
 
@@ -88,6 +90,9 @@ class Order
         $this->orderStatus = $orderStatus;
     }
 
+    public function __showCart(): void {
+
+    }
     public function __removeItem(): void {
 
     }

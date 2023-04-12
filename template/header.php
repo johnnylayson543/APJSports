@@ -38,4 +38,5 @@
 </div>
 <?php
 $item = new Item(0,0,"", 0, "");
+$order = new Order();
 ?>

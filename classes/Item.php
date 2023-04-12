@@ -186,7 +186,7 @@ class Item
 
     }
 
-    public function __addToOrder(): void{
+    public function __addToCart(): void{
 
 
     }
