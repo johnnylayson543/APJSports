@@ -239,5 +239,33 @@ class Item
 
         echo $string;
     }
-    
+
+    public function __createItemObjects(): void
+    {
+
+        include "../connectiondatabase/connection.php";
+
+        $sql = "SELECT * FROM item";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+            $objectID = $row["itemID"];
+            $objectPrice = $row["price"];
+            $objectImage = $row["image"];
+            $objectStock = $row["stock"];
+            $objectSport = $row["Sport"];
+
+            $objectName = "item" . $objectID;
+            $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
+            $$objectName = $object;
+
+        }
+
+        $pdo = null;
+
+        //$item3->__showItem($item3->getItemID());
+
+    }
 }
