@@ -39,6 +39,15 @@ if(isset($_POST['SignIn']))
         if($stmt->rowCount() > 0){
             $_SESSION['Email'] = $Email; // Store Email to the new session
             $_SESSION['Active'] = true; // Set new session to Active
+
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $user->setUserID($row["userID"]);
+            $user->setAddress($row["address"]);
+            $user->setFirstName($row["firstName"]);
+            $user->setEmail($row["email"]);
+            $user->setSurname($row["surname"]);
+
             header("location:index.php"); // Redirect to index page
         }
         else {
