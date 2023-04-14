@@ -6,7 +6,7 @@ require '../connectiondatabase/connection.php';
 // If the SignIn button is pressed
 if(isset($_POST['SignIn']))
 {
-    // Create a new sanitizer variable using the sanitizer class
+    // Create a new sanitizer variable using the sanitizer classes
     $sanitizer = new sanitizer();
 
     // Validate if the Email and Password POST is empty

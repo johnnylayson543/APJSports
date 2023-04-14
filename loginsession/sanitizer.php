@@ -3,7 +3,7 @@
 namespace loginsession;
 
 /**
- * This php class sanitizes sign-in and form inputs
+ * This php classes sanitizes sign-in and form inputs
  */
 class sanitizer
 {

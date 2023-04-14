@@ -6,7 +6,7 @@ require "connection.php";
 // Once user presses submit on the sign up for the following will happen
 if(isset($_POST['Submit1'])){
 
-    // Create a new sanitizer variable using the sanitizer class
+    // Create a new sanitizer variable using the sanitizer classes
     $sanitizer = new sanitizer();
 
     // Assigning values to variables based on user's input in the form (also needs to be sanitized)

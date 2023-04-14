@@ -192,7 +192,7 @@ class Item
 
     }
 
-    public function __createItem(): void
+    public function createItem(int $itemID, float $price, string $image, int $stock, string $sport): void
     {
 
         // It's probably best to create a separate page which does the POST request for these stuff
@@ -204,29 +204,32 @@ class Item
             // Connect to the DB
             include '../connectiondatabase/connection.php';
 
-            // Create new items and sanitize data
-            $sanitize = new sanitizer();
-            $create_item = array(
-                "itemID" => $sanitize->sanitize($_POST['ItemID']),
-                "price" => $sanitize->sanitize($_POST['Price']),
-                "image" => $sanitize->sanitize($_POST['Image']),
-                "stock" => $sanitize->sanitize($_POST['Stock']),
-                "Sport" => $sanitize->sanitize($_POST['Sport']),
+            // Create new items array (already sanitized during the POST request)
+            // Use the parameters created & passed by the constructor and createItem function to create new items
+            $new_item = array(
+                "itemID" => $itemID,
+                "price" => $price,
+                "image" => $image,
+                "stock" => $stock,
+                "Sport" => $sport,
             );
+
+            // Prepare the sql query, create the statement and execute it
             $sql = sprintf("INSERT INTO %s (%s) values (%s)", "item",
-                implode(", ", array_keys($create_item)),
-                ":" . implode(", :", array_keys($create_item)));
+                implode(", ", array_keys($new_item)),
+                ":" . implode(", :", array_keys($new_item)));
             $stmt = $conn->prepare($sql);
-            $stmt->execute($create_item);
+            $stmt->execute($new_item);
 
         } catch (PDOException $error) {
             echo $sql . "<br>" . $error->getMessage();
         }
 
         // Check if the submitted form is successful
+        // If yes, echo that the item was successfully created
         if (isset($_POST['Create']) && $stmt) {
             echo '<br><br>';
-            echo $create_item['itemID'] . ' has been successfully created!';
+            echo 'Item ' . $new_item['itemID'] . ' has been successfully created!';
             echo '<br><br>';
         }
 
