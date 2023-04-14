@@ -11,8 +11,8 @@
 
 <div class="mainarea">
     <?php include "../connectiondatabase/staffView.php" ?>
-    <h1>TITLE</h1>
-    <p class="lead">Popular items </p>
+    <h1>Popular Items</h1>
+    <p class="lead"> </p>
     <div class="popular-items">
         <div class="item">
             <img src="../images/soccer/mitre_ball.jpg" alt="Popular Item 1">

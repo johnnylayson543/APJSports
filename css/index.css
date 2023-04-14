@@ -17,6 +17,10 @@ header {
     padding: 1rem;
 }
 
+.mainarea {
+    text-align: center;
+}
+
 .popular-items {
     display: flex;
     justify-content: center;
