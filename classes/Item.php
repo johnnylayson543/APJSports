@@ -265,7 +265,6 @@ class Item
 
         $pdo = null;
 
-        //$item3->__showItem($item3->getItemID());
 
     }
 }

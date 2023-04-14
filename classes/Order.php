@@ -5,7 +5,7 @@ class Order
     private int $orderID;
     private float $price;
     private String $customerName;
-    private $orderStatus;
+    private OrderStatus $orderStatus;
 
     private array $cart;
 
@@ -18,7 +18,7 @@ class Order
      * @param String $customerName
      * @param OrderStaus $orderStatus
      */
-    public function __construct(int $orderID, float $price, string $customerName, $orderStatus)
+    public function __construct(int $orderID, float $price, string $customerName, OrderStatus $orderStatus)
     {
         $this->orderID = $orderID;
         $this->price = $price;

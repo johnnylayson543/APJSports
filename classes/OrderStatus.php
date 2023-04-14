@@ -2,9 +2,9 @@
 
 enum OrderStatus
 {
-    const IN_PROCESS = "in process";
-    const READY_TO_COLLECT = "ready to collect";
-    const READY_FOR_DELIVERY = "ready for delivery";
-    const REFUNDED = "refunded";
-    const ORDER_COMPLETE = "complete";
+    case IN_PROCESS;
+    case READY_TO_COLLECT;
+    case READY_FOR_DELIVERY;
+    case REFUNDED;
+    case ORDER_COMPLETE;
 }

@@ -9,6 +9,21 @@ class Payment
     private CardType $cardType;
 
     /**
+     * @param String $cardNo
+     * @param String $expDate
+     * @param int $cvv
+     * @param CardType $cardType
+     */
+    public function __construct(string $cardNo, string $expDate, int $cvv, CardType $cardType)
+    {
+        $this->cardNo = $cardNo;
+        $this->expDate = $expDate;
+        $this->cvv = $cvv;
+        $this->cardType = $cardType;
+    }
+
+
+    /**
      * @return String
      */
     public function getCardNo(): string

@@ -1,7 +1,6 @@
 
-<?php require_once '../classes/Item.php';?>
-<?php require_once '../classes/Order.php';?>
-<?php require_once '../classes/OrderStatus.php';?>
+<?php require_once '../classes/Main.php';?>
+
 
 <?php session_start(); ?>
 <!DOCTYPE html>
@@ -39,8 +38,8 @@
     </div>
 </div>
 <?php
-$item = new Item(0,0,"", 0, "");
-$order = new Order(0,0,"", OrderStatus::IN_PROCESS);
-$item->__createItemObjects();
+//$item = new Item(0,0,"", 0, "");
+//$order = new Order(0,0,"", OrderStatus::IN_PROCESS);
+//$item->__createItemObjects();
 
 ?>
