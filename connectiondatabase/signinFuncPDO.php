@@ -6,7 +6,7 @@ require '../connectiondatabase/connection.php';
 // If the SignIn button is pressed
 if(isset($_POST['SignIn']))
 {
-    // Create a new sanitizer variable using the sanitizer class
+    // Create a new sanitizer variable using the sanitizer classes
     $sanitizer = new sanitizer();
 
     // Validate if the Email and Password POST is empty
@@ -39,6 +39,15 @@ if(isset($_POST['SignIn']))
         if($stmt->rowCount() > 0){
             $_SESSION['Email'] = $Email; // Store Email to the new session
             $_SESSION['Active'] = true; // Set new session to Active
+
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $user->setUserID($row["userID"]);
+            $user->setAddress($row["address"]);
+            $user->setFirstName($row["firstName"]);
+            $user->setEmail($row["email"]);
+            $user->setSurname($row["surname"]);
+
             header("location:index.php"); // Redirect to index page
         }
         else {

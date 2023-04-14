@@ -3,7 +3,7 @@
 namespace loginsession;
 
 /**
- * This php class removes and kills sign-in sessions
+ * This php classes removes and kills sign-in sessions
  */
 class removesession{
 
