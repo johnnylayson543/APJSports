@@ -1,6 +1,6 @@
 <?php
 use loginsession\sanitizer;
-
+require_once "../classes/Main.php";
 require_once '../loginsession/sanitizer.php';
 require '../connectiondatabase/connection.php';
 // If the SignIn button is pressed
@@ -26,6 +26,7 @@ if(isset($_POST['SignIn']))
         // Bind the sql attributes and values on the user table with the PHP variables as "placeholder" to prevent SQL Injection
         $stmt->bindValue(':email', $Email);
         $stmt->bindValue(':password', $Password);
+
         // Execute the sql statement with specific associative array values & attributes on the user table.
         // If not, it executes and assigns all the default associative array values & attributes on the user table alongside with the
         // default $_POST["Email"] and $_POST["Password"] requests and values
@@ -39,14 +40,6 @@ if(isset($_POST['SignIn']))
         if($stmt->rowCount() > 0){
             $_SESSION['Email'] = $Email; // Store Email to the new session
             $_SESSION['Active'] = true; // Set new session to Active
-
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            $user->setUserID($row["userID"]);
-            $user->setAddress($row["address"]);
-            $user->setFirstName($row["firstName"]);
-            $user->setEmail($row["email"]);
-            $user->setSurname($row["surname"]);
 
             header("location:index.php"); // Redirect to index page
         }
