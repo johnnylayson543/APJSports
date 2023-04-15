@@ -5,6 +5,7 @@
 <head>
     <title>Shopping Cart Checkout</title>
     <link rel="stylesheet" type="text/css" href="../css/cart.css">
+
 </head>
 <body>
 <header>
