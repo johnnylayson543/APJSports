@@ -41,14 +41,12 @@
 
 if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) {
     foreach ($_SESSION["cart"] as $itemId) {
-        echo "Item ID:  . $itemId . <br>";
+        echo "Item ID:"  . $itemId .  " <br>";
 
         echo "<br>";
     }
 }else {
         echo "Cart is empty";
-
-
 
 }
 ?>
