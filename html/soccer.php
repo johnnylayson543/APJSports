@@ -1,6 +1,7 @@
 <?php require_once '../template/header.php';?>
 <?php require_once '../loginsession/forceloginheader.php';?>
 <link rel="stylesheet" type="text/css" href="../css/itemlayout.css">
+<link rel="stylesheet" type="text/css" href="../css/soccer.css">
 <title>Soccer</title>
 </head>
 

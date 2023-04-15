@@ -132,9 +132,18 @@ class Item
                 $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
                 $$objectName = $object;
 
-                echo "<img src='../images/" . $sport . "/" . $row["image"] . "' width='250' height='250'>" .
-                    "Item id = " . $row["itemID"] . " Price = " . $row["price"] . " Stock = " . $row["stock"] .
-                    " Sport = " . $row["Sport"] . "<button onclick=''>Add to Cart</button> <br><br>";
+                echo "<div>
+                        <img src='../images/" . $sport . "/" . $row["image"] . "' width='250' height='250'>" .
+                    " </div>
+                      <div>
+                             <ul>
+                                <li>Item id = " . $row["itemID"] . "</li> 
+                                <li>Price = " . $row["price"] . " </li>
+                                <li>Stock = " . $row["stock"] . "</li> 
+                                <li>Sport = " . $row["Sport"] . "</li>
+                            </ul>
+                            <button onclick=''>Add to Cart</button> <br><br>
+                      </div>";
             }
 
         } else {
