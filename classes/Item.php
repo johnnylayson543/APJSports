@@ -139,7 +139,7 @@ class Item
                         
                              <ul>
                                 <li>Item id = " . $row["itemID"] . "</li> 
-                                <li>Price = " . $row["price"] . " </li>
+                                <li>Price = " . $row["price"] . "</li>
                                 <li>Stock = " . $row["stock"] . "</li> 
                                 <li>Sport = " . $row["Sport"] . "</li>
                             </ul>
@@ -153,8 +153,6 @@ class Item
         }
 
         $pdo = null;
-
-        //$item3->__showItem($item3->getItemID());
 
     }
 
