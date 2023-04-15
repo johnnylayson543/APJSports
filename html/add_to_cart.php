@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["addToCart"])) {
 
     // Redirect back to the previous page
     header("Location: $previousPage");
-    
+
     exit;
 }
 ?>
