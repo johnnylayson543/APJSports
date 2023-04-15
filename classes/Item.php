@@ -109,6 +109,7 @@ class Item
         $this->sport = $sport;
     }
 
+    // This function shows (specific) items to the user
     public function __showItems(string $sport): void
     {
 
@@ -144,6 +145,39 @@ class Item
 
         //$item3->__showItem($item3->getItemID());
 
+    }
+
+    // This function shows all items to the user
+    public function __showAllItems(): void {
+
+        include "../connectiondatabase/connection.php";
+
+        $sql = "SELECT * FROM item";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                $objectID = $row["itemID"];
+                $objectPrice = $row["price"];
+                $objectImage = $row["image"];
+                $objectStock = $row["stock"];
+                $objectSport = $row["Sport"];
+
+                $objectName = "item" . $objectID;
+                $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
+                $$objectName = $object;
+
+                echo "Item id = " . $row["itemID"] . " Price = " . $row["price"] . " Stock = " . $row["stock"] .
+                    " Sport = " . $row["Sport"] . "<br><br><br>";
+            }
+
+        } else {
+            echo '0 results found';  // Print 0 found
+        }
+
+        $pdo = null;
     }
 
     public function __incStock(int $itemID, int $num): void
