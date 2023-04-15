@@ -133,6 +133,7 @@ class Item
                 $$objectName = $object;
 
                 echo "<div class = 'item'>
+                        <form method='post' action='add_to_cart.php'>
                         <div>
                             <img src='../images/" . $sport . "/" . $row["image"] . "' width='200' height='200'><br>
                         </div>
@@ -143,8 +144,8 @@ class Item
                                 <li>Stock = " . $row["stock"] . "</li> 
                                 <li>Sport = " . $row["Sport"] . "</li>
                             </ul>
-                            <button onclick=''>Add to Cart</button> <br><br>
-                        
+                            <input type = 'submit' name ='addToCart' value ='Add to Cart'> <br><br>
+                        </form>
                       </div>";
             }
 
