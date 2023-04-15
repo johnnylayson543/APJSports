@@ -37,5 +37,20 @@
 </body>
 </html>
 
-    <?php require_once '../template/footer.php';?>
+<?php
 
+if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) {
+    foreach ($_SESSION["cart"] as $itemId) {
+        echo "Item ID:  . $itemId . <br>";
+
+        echo "<br>";
+    }
+}else {
+        echo "Cart is empty";
+
+
+
+}
+?>
+
+    <?php require_once '../template/footer.php';?>
