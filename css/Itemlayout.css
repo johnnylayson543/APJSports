@@ -2,8 +2,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
-    grid-auto-rows: 320px;
+    grid-auto-rows: auto;
     margin: 30px 0;
+    align-items: stretch;
 }
 
 .item {
@@ -12,7 +13,7 @@
     justify-content: space-between;
     box-sizing: border-box;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 10px;
     height: 100%;
 }

@@ -2,9 +2,8 @@ ul li {
     color: #111111;
 }
 
-.itembox{
-    border: #111111;
-    border-width: 5px;
-    margin-bottom: 5%;
-}
 
+
+body{
+    background: white;
+}
