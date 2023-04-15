@@ -132,10 +132,11 @@ class Item
                 $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
                 $$objectName = $object;
 
-                echo "<div>
-                        <img src='../images/" . $sport . "/" . $row["image"] . "' width='250' height='250'>" .
-                    " </div>
-                      <div>
+                echo "<div class = 'itembox'>
+                        <div>
+                            <img src='../images/" . $sport . "/" . $row["image"] . "' width='250' height='250'>
+                        </div>
+                        <div>
                              <ul>
                                 <li>Item id = " . $row["itemID"] . "</li> 
                                 <li>Price = " . $row["price"] . " </li>
@@ -143,6 +144,7 @@ class Item
                                 <li>Sport = " . $row["Sport"] . "</li>
                             </ul>
                             <button onclick=''>Add to Cart</button> <br><br>
+                        </div>
                       </div>";
             }
 
