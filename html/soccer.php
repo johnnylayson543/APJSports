@@ -11,10 +11,7 @@
 
 <div class="item-container">
 
-    <?php $item->__showItems("Soccer");
-
-
-    ?>
+    <?php $item->__showItems("Soccer"); ?>
 </div>
 <?php require_once '../template/footer.php';?>
 

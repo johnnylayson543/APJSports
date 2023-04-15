@@ -1,3 +1,4 @@
+
 <?php
 use loginsession\sanitizer;
 require_once "../classes/Main.php";
@@ -20,7 +21,7 @@ if(isset($_POST['SignIn']))
         $Password = $sanitizer->sanitize($_POST["Password"]);
 
         // Create and prepare sql statement
-        $sql = "SELECT * FROM user WHERE email = :email AND password = :password";
+        $sql = "SELECT firstName, email, password FROM user WHERE email = :email AND password = :password";
         $stmt = $conn->prepare($sql);
 
         // Bind the sql attributes and values on the user table with the PHP variables as "placeholder" to prevent SQL Injection
@@ -36,9 +37,12 @@ if(isset($_POST['SignIn']))
             'password' => $Password
         ));
 
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
         // Check if email and password is found and the table rowCount is not 0
         if($stmt->rowCount() > 0){
             $_SESSION['Email'] = $Email; // Store Email to the new session
+            $_SESSION['FirstName'] = $user['firstName'];  // Store firstname of the user in session
             $_SESSION['Active'] = true; // Set new session to Active
 
             header("location:index.php"); // Redirect to index page
