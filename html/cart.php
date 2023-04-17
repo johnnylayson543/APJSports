@@ -13,6 +13,7 @@
 </header>
 <main>
     <h2>Checkout</h2>
+    <a href="../html/index.php"><input type="button" value="Return to home" ></a>
     <form>
         <div>
             <label for="name">Name:</label>
@@ -52,5 +53,5 @@ if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) {
 }
 ?>
 
-
+<a href="../html/index.php"><input type="button" value="Return to home" ></a>
     <?php require_once '../template/footer.php';?>
