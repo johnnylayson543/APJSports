@@ -109,4 +109,31 @@ class Order
 
     }
 
+    public function __showOrders(): void {
+        include "../connectiondatabase/connection.php";
+
+        $sql = "SELECT * FROM order";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                $orderID = $row["orderID"];
+
+
+                $objectName = "order" . $objectID;
+                //$object = new Order($orderID, $);
+                //$$objectName = $object;
+
+                echo "OrderID = " . $orderID;
+            }
+
+        } else {
+            echo '0 results found';  // Print 0 found
+        }
+
+        $pdo = null;
+    }
+
 }
