@@ -12,11 +12,12 @@
 
 <body>
 <header><h1>Boxing</h1></header>
-
+<a href="../html/index.php"><input type="button" value="Return to home" ></a>
 
 <div class="item-container">
     <?php
     $items = $item->__showItems("Boxing");
     ?>
 </div>
+<a href="../html/index.php"><input type="button" value="Return to home" ></a>
 <?php require_once '../template/footer.php';?>
