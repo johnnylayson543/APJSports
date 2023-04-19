@@ -1,11 +1,13 @@
-<?php require_once '../template/header.php';?>
-<?php require_once '../loginsession/forceloginheader.php';?>
+<?php
+require_once '../template/header.php';
+require_once '../loginsession/forceloginheader.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Shopping Cart Checkout</title>
     <link rel="stylesheet" type="text/css" href="../css/cart.css">
-
 </head>
 <body>
 <header>
@@ -33,34 +35,35 @@
         </div>
         <button type="submit">Submit Order</button>
     </form>
-</main>
 
+    <?php
+    $total = 0.0;
+
+    if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) {
+        foreach ($_SESSION["cart"] as $itemId => $value) {
+            echo "<form method='post' action='remove_from_cart.php'>"; // Add form
+            echo "Item ID: "  . $itemId . " | Sport: " . $value['sport'] . " | Price: " . $value['price'] . " | Quantity: " . $value['quantity'] . "<br>"; // Display the item ID, sport, price, and quantity
+            echo "<input type='hidden' name='itemId' value='" . $itemId . "'>"; // Add hidden input for item ID
+            echo "<button type='submit' name='removeFromCart'>Remove</button>"; // Add remove button
+            echo "</form>"; // Close form
+            echo "<br>";
+
+            // Update total
+            $total += $value['price'] * $value['quantity'];
+        }
+
+        echo "Total = " . $total;
+
+    } else {
+        echo "Cart is empty";
+    }
+    ?>
+
+    <a href="../html/index.php"><input type="button" value="Return to home" ></a>
+</main>
 </body>
 </html>
 
 <?php
-
-$total = 0.0;
-
-if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) {
-    foreach ($_SESSION["cart"] as $itemId => $value) {
-        echo "<form method='post' action='remove_from_cart.php'>"; // Add form
-        echo "Item ID: "  . $itemId . " | Sport: " . $value['sport'] . " | Price: " . $value['price'] . " | Quantity: " . $value['quantity'] . "<br>"; // Display the item ID, sport, price, and quantity
-        echo "<input type='hidden' name='itemId' value='" . $itemId . "'>"; // Add hidden input for item ID
-        echo "<button type='submit' name='removeFromCart'>Remove</button>"; // Add remove button
-        echo "</form>"; // Close form
-        echo "<br>";
-
-        $total = $total + $value['price'];
-    }
-
-    echo "Total = " . $total;
-
-} else {
-    echo "Cart is empty";
-}
+require_once '../template/footer.php';
 ?>
-
-
-<a href="../html/index.php"><input type="button" value="Return to home" ></a>
-    <?php require_once '../template/footer.php';?>
