@@ -22,6 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["addToCart"])) {
             "price" => $price,
             "quantity" => 1
         );
+
     }
 
     // Get the URL of the previous page

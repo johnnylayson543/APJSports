@@ -135,6 +135,8 @@ class Item
                 echo "<div class = 'item'>
                         <form method='post' action='add_to_cart.php'>
                         <input type='hidden' name='itemId' value='" . $row["itemID"] . "'>
+                        <input type='hidden' name='price' value='" . $row["price"] . "'>
+                        <input type='hidden' name='sport' value='" . $row["Sport"] . "'>
 
                         <div>
                             <img src='../images/" . $sport . "/" . $row["image"] . "' width='200' height='200'><br>
