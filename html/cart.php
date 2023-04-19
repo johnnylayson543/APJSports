@@ -40,6 +40,8 @@
 
 <?php
 
+$total = 0.0;
+
 if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) {
     foreach ($_SESSION["cart"] as $itemId => $value) {
         echo "<form method='post' action='remove_from_cart.php'>"; // Add form
@@ -48,7 +50,12 @@ if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) {
         echo "<button type='submit' name='removeFromCart'>Remove</button>"; // Add remove button
         echo "</form>"; // Close form
         echo "<br>";
+
+        $total = $total + $value['price'];
     }
+
+    echo "Total = " . $total;
+
 } else {
     echo "Cart is empty";
 }
