@@ -10,6 +10,5 @@
 
 <input type="button" value="clear" onclick="">
 
-<?php require_once '../connectionmysqli/showOrders.php'?>
 
 <?php require_once '../template/footer.php';?>
