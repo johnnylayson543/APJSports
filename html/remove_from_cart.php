@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["removeFromCart"])) {
 
     if (isset($_SESSION["cart"][$itemId])) {
         $_SESSION["cart"][$itemId]["quantity"]--;
-        
+
         if($_SESSION["cart"][$itemId]["quantity"] != 0){
             $item->__incStock($itemId,1);
         } else {
