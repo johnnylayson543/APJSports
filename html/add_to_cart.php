@@ -1,12 +1,17 @@
 <?php
+
+require "../classes/Item.php";
+
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["addToCart"])) {
 
+
     $itemId = $_POST["itemId"];
     $price = $_POST["price"];
     $sport = $_POST["sport"];
-
+    $item = new Item($itemId,$price,"",0,$sport);
+    $item->__decStock($itemId,1);
 
 
     // Check if the item is already in the cart
