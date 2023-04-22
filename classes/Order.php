@@ -83,7 +83,7 @@ class Order
     }
 
     /**
-     * @param OrderStaus $orderStatus
+     * @param OrderStaus $orderStatus.
      */
     public function setOrderStatus(OrderStaus $orderStatus): void
     {
