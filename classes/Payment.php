@@ -87,7 +87,4 @@ class Payment
         $this->cardType = $cardType;
     }
 
-
-
-
 }
