@@ -28,7 +28,7 @@ echo "Test5: value = 150.00, expected result = 138.75, result = " . $order->__ca
 echo "Test6: value = 151.00, expected result = 139.675, result = " . $order->__calcTotal($test6) . "\n";
 echo "Test7: value = 199.99, expected result = 184.991, result = " . $order->__calcTotal($test7) . "\n";
 echo "Test8: value = 200.00, expected result = 180.00, result = " . $order->__calcTotal($test8) . "\n";
-echo "Test9: value = 240.00, expected result = 216, result = " . $order->__calcTotal($test9) . "\n";
+echo "Test9: value = 240.00, expected result = 216.00, result = " . $order->__calcTotal($test9) . "\n";
 echo "Test10: value = 250.00, expected result = 218.75, result = " . $order->__calcTotal($test10). "\n";
 echo "Test11: value = 300.00, expected result = 255.00, result = " . $order->__calcTotal($test11). "\n";
 echo "Test12: value = 350.00, expected result = 288.75, result = " . $order->__calcTotal($test12). "\n";
