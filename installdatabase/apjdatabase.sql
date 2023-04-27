@@ -41,7 +41,7 @@ CREATE TABLE `item` (
 
 INSERT INTO `item` (`itemID`, `price`, `image`, `stock`, `Sport`) VALUES
 (1, 62.77, 'swimhat.png', 8, 'Swimming'),
-(2, 35.7, 'swimhat.png', 2, 'Swimming'),
+(2, 35.7, 'swimhat2.png', 2, 'Swimming'),
 (3, 6.29, 'basketball.png', 19, 'Basketball'),
 (4, 78.19, 'gog.png', 10, 'Swimming'),
 (5, 37.29, 'wilson.png', 2, 'Basketball'),
