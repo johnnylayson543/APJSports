@@ -13,6 +13,29 @@ if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) {
 
         // Update total
         $total += $value['price'] * $value['quantity'];
+
+        if ($total >= 400.00){
+            $total = $total * 0.80;
+        }
+        elseif ($total >= 350.00 && $total < 399.99){
+            $total = $total * 0.825;
+        }
+        elseif ($total >= 300.00 && $total < 349.99){
+            $total = $total * 0.85;
+        }
+        elseif ($total >= 250.00 && $total < 299.99){
+            $total = $total * 0.875;
+        }
+        elseif ($total >= 200.00 && $total < 249.99){
+            $total = $total * 0.90;
+        }
+        elseif ($total >= 150.00 && $total < 199.99){
+            $total = $total * 0.925;
+        }
+        elseif ($total >= 100.00 && $total < 149.99){
+            $total = $total * 0.95;
+        }
+
     }
 
     echo "Total = " . $total;
