@@ -19,6 +19,25 @@ if(isset($_POST['Submit1'])){
     // Validating that all the fields are filled in
     if (!empty($firstName) && !empty($surName) && !empty($address) && !empty($email) && !empty($password)) {
 
+
+        // Validate first name to only allow characters and no symbols or numbers
+        //Preg_match to see if it matches the requirement
+        if (!preg_match("/^[a-zA-Z]+$/", $firstName)) {
+            $error = "First name must contain only letters";
+        }
+
+        // Validate surname (same as first name)
+        if (!preg_match("/^[a-zA-Z]+$/", $surName)) {
+            $error = "Surname must contain only letters";
+        }
+
+        // Display error message if wrong
+        if (isset($error)) {
+            echo $error;
+            exit();
+        }
+
+
         $sql = "SELECT * FROM user WHERE email = :email";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':email', $email);
