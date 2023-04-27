@@ -196,7 +196,7 @@ class Item
         $pdo = null;
     }
 
-    public function __incStock(int $itemID, int $num): void
+    public function __incStock(int $itemID, int $num): float
     {
 
         include "../connectiondatabase/connection.php";
@@ -214,9 +214,11 @@ class Item
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
+        return $newStock;
+
     }
 
-    public function __decStock(int $itemID, int $num): void
+    public function __decStock(int $itemID, int $num): float
     {
 
         include "../connectiondatabase/connection.php";
@@ -239,6 +241,7 @@ class Item
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
+        return $newStock;
     }
 
 
