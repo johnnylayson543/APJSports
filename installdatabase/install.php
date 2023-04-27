@@ -4,7 +4,7 @@
  *
  */
 try {
-    // Create a PDO connection, grab the apjdatabase sql file and then execute and install it.#
+    // Create a PDO connection, grab the apjdatabase sql file and then execute and install it.
     require '../connectiondatabase/connection.php';
     $installsql = file_get_contents("../installdatabase/apjdatabase.sql");
     $conn->exec($installsql);
