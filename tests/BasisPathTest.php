@@ -1,8 +1,9 @@
 <?php
 
 require "../classes/Order.php";
+require "../classes/OrderStatus.php";
 
-$order = new Order(0,0,null, OrderStatus::IN_PROCESS );
+$order = new Order(0,0,"", OrderStatus::IN_PROCESS );
 
 $test1 = 10.00;
 $test2 = 100.00;
@@ -19,17 +20,17 @@ $test12 = 350.00;
 $test13 = 380.00;
 $test14 = 400.00;
 
-echo $order->__calcTotal($test1);
-echo $order->__calcTotal($test2);
-echo $order->__calcTotal($test3);
-echo $order->__calcTotal($test4);
-echo $order->__calcTotal($test5);
-echo $order->__calcTotal($test6);
-echo $order->__calcTotal($test7);
-echo $order->__calcTotal($test8);
-echo $order->__calcTotal($test9);
-echo $order->__calcTotal($test10);
-echo $order->__calcTotal($test11);
-echo $order->__calcTotal($test12);
-echo $order->__calcTotal($test13);
-echo $order->__calcTotal($test14);
+echo $order->__calcTotal($test1) . "\n";
+echo $order->__calcTotal($test2) . "\n";
+echo $order->__calcTotal($test3) . "\n";
+echo $order->__calcTotal($test4) . "\n";
+echo $order->__calcTotal($test5) . "\n";
+echo $order->__calcTotal($test6) . "\n";
+echo $order->__calcTotal($test7) . "\n";
+echo $order->__calcTotal($test8) . "\n";
+echo $order->__calcTotal($test9) . "\n";
+echo $order->__calcTotal($test10). "\n";
+echo $order->__calcTotal($test11). "\n";
+echo $order->__calcTotal($test12). "\n";
+echo $order->__calcTotal($test13). "\n";
+echo $order->__calcTotal($test14). "\n";
