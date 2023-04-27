@@ -183,12 +183,10 @@ class Item
                 $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
                 $$objectName = $object;
 
-                echo "<form method='post' action='../html/add_to_cart.php'>" .
-                    "<img src = '../images/" . $sport . "/" . $row ["image"] . "' width = '250' height = '250'>" .
-                    "Item id = " . $row["$itemID"] . " Price = " . $row["price"] . " Stock = " . $row["stock"] .
+                echo " " .
+                    "Item id = " . $row["itemID"] . " Price = " . $row["price"] . " Stock = " . $row["stock"] .
                     " Sport = " . $row["Sport"] . "<input type ='hidden' name = 'itemId value='" . $row ["itemID"] . "'>".
-                    "<input type = 'submit' name ='addToCart' value ='Add to Cart'>" .
-                    "</form> <br><br>";
+                    " <br><br>";
             }
 
         } else {
