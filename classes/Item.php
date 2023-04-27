@@ -241,10 +241,6 @@ class Item
 
     }
 
-    public function __addToCart(): void
-    {
-        
-    }
 
     public function createItem(int $itemID, float $price, string $image, int $stock, string $sport): void
     {
