@@ -27,9 +27,7 @@
                 <li><a href="boxing.php">Boxing</a></li>
                 <li><a href="swimming.php">Swimming</a></li>
                 <li><a href="cart.php">Cart</a></li>
-                <li class="right"><form class="search-form">
-                        <input type="text" placeholder="Search...">
-                        <button type="submit"><i class="fa fa-search"></i></button>
+               
                     </form>
                 </li>
                 <li class="right"><a href="signup.php">Login/Signup</a></li>
