@@ -183,10 +183,10 @@ class Item
                 $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
                 $$objectName = $object;
 
-                echo "<form method='post' action='../html/add_to_cart.php'>" .
+                echo " " .
                     "Item id = " . $row["itemID"] . " Price = " . $row["price"] . " Stock = " . $row["stock"] .
                     " Sport = " . $row["Sport"] . "<input type ='hidden' name = 'itemId value='" . $row ["itemID"] . "'>".
-                    "</form> <br><br>";
+                    " <br><br>";
             }
 
         } else {
