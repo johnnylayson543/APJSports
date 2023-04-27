@@ -232,6 +232,11 @@ class Item
 
         $newStock = $itemStock - $num;
 
+        // Prevent stock from going below zero
+        if ($newStock < 0) {
+            $newStock = 0;
+        }
+
         $sql = "UPDATE item SET stock = " . $newStock . " WHERE itemID = '" . $itemID . "'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
