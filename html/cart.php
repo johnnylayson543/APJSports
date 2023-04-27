@@ -20,7 +20,8 @@ require_once '../loginsession/forceloginheader.php';
             <h1>Checkout</h1>
         </header>
         <main>
-            <?php require "../connectiondatabase/shoppingCartFunc.php"?>
+            <?php //require "../connectiondatabase/shoppingCartFunc.php"
+                    $order->__showCart();?>
 
 
             <br><br>
