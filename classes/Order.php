@@ -95,7 +95,7 @@ class Order
 
         $total = 0.0;
 
-// Items gets added to the shopping cart here. You also have the option to remove them
+        // Items gets added to the shopping cart here. You also have the option to remove them
         if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) {
             foreach ($_SESSION["cart"] as $itemId => $value) {
                 echo "<form method='post' action='../html/remove_from_cart.php'>"; // Add form
