@@ -11,7 +11,7 @@ if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) {
         echo "</form>"; // Close form
         echo "<br>";
 
-        // Update total
+        // Update total (Basis Path Test - Apply Discounts if the total amount is 100 or more)
         $total += $value['price'] * $value['quantity'];
 
         if ($total >= 400.00){
@@ -38,9 +38,9 @@ if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) {
 
     }
 
-    echo "Total = " . $total;
+    echo "Total = " . $total;  // Display total
 
 } else {
-    echo "Cart is empty";
+    echo "Cart is empty"; // If there is nothing on the cart
 }
 

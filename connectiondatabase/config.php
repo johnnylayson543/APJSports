@@ -1,7 +1,7 @@
 <?php
 /**
  * DB credentials configuration file
- *
+ * This config file is required to establish a PHP PDO connection to the DB
  */
 $servername = "localhost";
 $username = "root";
