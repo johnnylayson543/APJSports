@@ -29,6 +29,8 @@ loginsession - contains miscellaneous and helper functions such as the sanitizer
 
 template - contains the web templates such as header and footer.
 
+tests - contains files used for testing valid and invalid inputs such as Unit and Basis Path Tests.
+
 
 
 
