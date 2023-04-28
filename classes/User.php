@@ -124,29 +124,4 @@ class User
         $this->address = $address;
     }
 
-    public function __signup(): void {
-
-    }
-    public function __login(): void {
-
-    }
-    public function __createOrder(): void{
-
-    }
-
-    public function __refundOrder(): void {
-
-    }
-
-    public function __orderStock(): void {
-
-    }
-
-    public function __setOrderForCollection(): void {
-
-    }
-
-    public function __setOrderForDelivery(): void {
-
-    }
 }
