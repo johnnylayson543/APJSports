@@ -2,6 +2,7 @@
 
 class Order
 {
+    //declaring all the variables
     private int $orderID;
     private float $price;
     private String $customerName;
@@ -18,14 +19,14 @@ class Order
      * @param String $customerName
      * @param OrderStaus $orderStatus
      */
-    public function __construct(int $orderID, float $price, string $customerName, OrderStatus $orderStatus)
+    public function __construct(int $orderID, float $price, string $customerName, OrderStatus $orderStatus)//constructor
     {
         $this->orderID = $orderID;
         $this->price = $price;
         $this->customerName = $customerName;
         $this->orderStatus = $orderStatus;
     }
-
+    //all the getters and setters
     /**
      * @return int
      */
@@ -109,7 +110,7 @@ class Order
                 $total += $value['price'] * $value['quantity'];
 
             }
-
+            //appling the discounts based on total
             $total = $this->__calcTotal($total);
 
             echo "Total = " . $total;

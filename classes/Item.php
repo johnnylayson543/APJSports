@@ -6,6 +6,7 @@ use loginsession\sanitizer;
 
 class Item
 {
+    //crating variables ************************************************************************************************
     private int $itemID;
     private float $price;
     private string $image;
@@ -19,6 +20,7 @@ class Item
      * @param int $stock
      * @param String $sport
      */
+    //creating constructor**********************************************************************************************
     public function __construct(int $itemID, float $price, string $image, int $stock, string $sport)
     {
         $this->itemID = $itemID;
@@ -32,6 +34,7 @@ class Item
     /**
      * @return int
      */
+    //Creating all the getters and setters******************************************************************************
     public function getItemID(): int
     {
         return $this->itemID;
@@ -108,29 +111,29 @@ class Item
     {
         $this->sport = $sport;
     }
-
+    // All the methods are below****************************************************************************************
     // This function shows (specific) items to the user
     public function __showItems(string $sport): void
     {
-
+        //connecting to the database
         include "../connectiondatabase/connection.php";
-
+        //creating and executing an sql statement
         $sql = "SELECT * FROM item WHERE Sport = '" . $sport . "'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-
+        //if more than 0 rows appear
         if ($stmt->rowCount() > 0) {
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {//while there are results in a row
+                //assigning variables to each row of the table in the database
                 $objectID = $row["itemID"];
                 $objectPrice = $row["price"];
                 $objectImage = $row["image"];
                 $objectStock = $row["stock"];
                 $objectSport = $row["Sport"];
-
+                //creating a name for an object
                 $objectName = "item" . $objectID;
-                $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
-                $$objectName = $object;
+                $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);//creating a new object
+                $$objectName = $object;//assigning a name to the object
 
                 echo "<div class = 'item'>
                         <form method='post' action='add_to_cart.php'>
@@ -151,96 +154,96 @@ class Item
                             <input type = 'submit' name ='addToCart' value ='Add to Cart'> <br><br>
                         </form>
                       </div>";
-            }
-
+            }//end of the while loop
+        //end of tthe if statement
         } else {
             echo '0 results found';  // Print 0 found
         }
 
-        $pdo = null;
+        $pdo = null;//disconnecting from the database
 
     }
 
     // This function shows all items to the user
     public function __showAllItems(): void {
-
+        //connecting to the db
         include "../connectiondatabase/connection.php";
-
+        //creating and running a sql statement
         $sql = "SELECT * FROM item";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-
+        //if we get more than 0 result
         if ($stmt->rowCount() > 0) {
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {//for each row of the result table do the following
+                //assigning each rows result to a variable
                 $objectID = $row["itemID"];
                 $objectPrice = $row["price"];
                 $objectImage = $row["image"];
                 $objectStock = $row["stock"];
                 $objectSport = $row["Sport"];
-
+                //creating a name for the item object
                 $objectName = "item" . $objectID;
-                $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
-                $$objectName = $object;
+                $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);//creating item object
+                $$objectName = $object;//assigning name to the object
 
                 echo " " .
                     "Item id = " . $row["itemID"] . " Price = " . $row["price"] . " Stock = " . $row["stock"] .
                     " Sport = " . $row["Sport"] . "<input type ='hidden' name = 'itemId value='" . $row ["itemID"] . "'>".
                     " <br><br>";
-            }
-
+            }//end of while
+        //end of if
         } else {
             echo '0 results found';  // Print 0 found
         }
-
+        //closing connection to db
         $pdo = null;
     }
 
     public function __incStock(int $itemID, int $num): float
     {
-
+        //connecting to the db
         include "../connectiondatabase/connection.php";
-
+        //creaing an executing an sql statement
         $sql = "SELECT * FROM item WHERE itemID = '" . $itemID . "'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-
+        //we get the results of the search and assign them to the row variable
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $itemStock = $row["stock"];
-
+        $itemStock = $row["stock"];//assigning a variable to the row column
+        //creating a newStock variable an assigning a value to it
         $newStock = $itemStock + $num;
-
+        //Creating a sql statement to increase the stock in db and running it
         $sql = "UPDATE item SET stock = " . $newStock . " WHERE itemID = '" . $itemID . "'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-
+        //returning the new stock variable
         return $newStock;
 
     }
 
     public function __decStock(int $itemID, int $num): float
     {
-
+        //connecting to a db
         include "../connectiondatabase/connection.php";
-
+        //creating a sql statement and executing it
         $sql = "SELECT * FROM item WHERE itemID = '" . $itemID . "'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $itemStock = $row["stock"];
-
+        //we get the results of the search and assign them to the row variable
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);//assigning a variable to the row column
+        $itemStock = $row["stock"];//assigning a variable to the row column
+        //creating a newStock variable an assigning a value to it
         $newStock = $itemStock - $num;
 
         // Prevent stock from going below zero
         if ($newStock < 0) {
             $newStock = 0;
         }
-
+        //Creating a sql statement to increase the stock in db and running it
         $sql = "UPDATE item SET stock = " . $newStock . " WHERE itemID = '" . $itemID . "'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-
+        //returning the new stock variable
         return $newStock;
     }
 
@@ -298,29 +301,28 @@ class Item
 
     public function __createItemObjects(): void
     {
-
+        //connecting to the db
         include "../connectiondatabase/connection.php";
-
+        //creating an sql statement and running it
         $sql = "SELECT * FROM item";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-
+        //while we get results assign the row of answers to the row variable
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
+            //assigning values to all variables
             $objectID = $row["itemID"];
             $objectPrice = $row["price"];
             $objectImage = $row["image"];
             $objectStock = $row["stock"];
             $objectSport = $row["Sport"];
-
+            //creating object name
             $objectName = "item" . $objectID;
-            $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);
-            $$objectName = $object;
+            $object = new Item($objectID, $objectPrice, $objectImage, $objectStock, $objectSport);//creating a new object
+            $$objectName = $object;//assigning name to object
 
-        }
-
+        }//end of while
+        //closing db connection
         $pdo = null;
-
 
     }
 }

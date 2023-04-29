@@ -2,7 +2,7 @@
 
 class Payment
 {
-
+    //creating all the variables
     private String $cardNo;
     private String $expDate;
     private int $cvv;
@@ -14,7 +14,7 @@ class Payment
      * @param int $cvv
      * @param CardType $cardType
      */
-    public function __construct(string $cardNo, string $expDate, int $cvv, CardType $cardType)
+    public function __construct(string $cardNo, string $expDate, int $cvv, CardType $cardType)//constructor
     {
         $this->cardNo = $cardNo;
         $this->expDate = $expDate;
@@ -22,7 +22,7 @@ class Payment
         $this->cardType = $cardType;
     }
 
-
+    //getters and setters
     /**
      * @return String
      */

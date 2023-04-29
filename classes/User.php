@@ -2,7 +2,7 @@
 
 class User
 {
-
+    //creating all the variables
     private int $userID = 0;
     private String $email = "null";
     private String $password = "null";
@@ -18,7 +18,7 @@ class User
      * @param string $surname
      * @param string $address
      */
-    public function __construct(int $userID, string $email, string $password, string $firstName, string $surname, string $address)
+    public function __construct(int $userID, string $email, string $password, string $firstName, string $surname, string $address)//constructor
     {
         $this->userID = $userID;
         $this->email = $email;
@@ -27,7 +27,7 @@ class User
         $this->surname = $surname;
         $this->address = $address;
     }
-
+    //all the getters and setters
     /**
      * @return int
      */
